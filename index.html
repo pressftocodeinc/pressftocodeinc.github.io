@@ -4,7 +4,12 @@
 <head>
   <title>Press F to Code Inc.</title>
   <meta name="description" content="Website for Press F To Code Inc.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    * {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
     html,
     body {
       width: 100%;
@@ -34,6 +39,10 @@
       color: lightblue;
     }
 
+    p {
+      font-size: 20px;
+    }
+
     .title {
       width: 100%;
       display: flex;
@@ -42,8 +51,6 @@
     }
 
     footer {
-      position: absolute;
-      bottom: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -57,19 +64,27 @@
       gap: 16px;
     }
 
-    section {
-      width: 50%;
-    }
-
     h1 {
       padding-left: 16px;
       padding-right: 16px;
     }
 
-    .themeButtons {
-      padding-bottom: 16px;
-      display: flex;
-      gap: 16px;
+    button {
+      font-size: 16px;
+      padding: 4px 8px;
+    }
+
+    @media only screen and (max-width: 600px) {
+      section {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+    }
+
+    @media only screen and (min-width: 600px) {
+      section {
+        width: 50%;
+      }
     }
   </style>
 
@@ -120,7 +135,7 @@
   <section id="marqueeSection">
     <p>In the meantime, enjoy this amazing <code>html</code> relic:</p>
     <button onclick="marqueeOff()">Turn it off</button>
-    <marquee id="marqueeBox" direction="down" width="100%" height="200" behavior="alternate">
+    <marquee id="marqueeBox" direction="down" width="100%" behavior="alternate">
       <marquee behavior="alternate">Weee, </br>I'm a web </br>faux pas!</marquee>
     </marquee>
   </section>
